@@ -551,6 +551,11 @@ aside.clients img {
 section#mutterschaftsurlaub {
   display:none;
 }
+section#mutterschaftsurlaub a:hover,
+section#mutterschaftsurlaub a:focus,
+section#mutterschaftsurlaub a:active {
+  color: lightblue;
+}
 section#mutterschaftsurlaub.show {
   display: block;
 }
