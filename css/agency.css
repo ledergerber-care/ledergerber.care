@@ -548,20 +548,6 @@ section h3.section-subheading {
 aside.clients img {
   margin: 50px auto;
 }
-section#mutterschaftsurlaub {
-  display:none;
-}
-section#mutterschaftsurlaub a:hover,
-section#mutterschaftsurlaub a:focus,
-section#mutterschaftsurlaub a:active {
-  color: lightblue;
-}
-section#mutterschaftsurlaub.show {
-  display: block;
-}
-section#mutterschaftsurlaub img {
-  padding: 40px 0;
-}
 section#contact {
   background-color: #222222;
   color: #FFF;
