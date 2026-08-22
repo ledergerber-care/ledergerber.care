@@ -455,6 +455,11 @@ table.weiterbildung td:first-child {
     .indications { gap: 30px; }
     .contact-cards { grid-template-columns: 1fr; gap: 30px; padding-top: 8px; }
 
+    /* Wenn die Preisspalten untereinander stehen, braucht der zweite
+       Block mehr Abstand nach oben, sonst ruecken Hinweistext und
+       naechster Titel zu eng zusammen. */
+    #preise .two-col-wide > div + div { margin-top: 48px; }
+
     .meta-row { flex-direction: column; gap: 8px 0; }
 
     /* Auf dem Telefon stehen die drei Textbloecke sehr eng beieinander
