@@ -180,6 +180,47 @@ section[id] { scroll-margin-top: 24px; }
 .site-nav a { color: var(--body); }
 .site-nav a:hover { color: var(--accent); }
 
+/* Hamburger — nur auf schmalen Bildschirmen und nur mit JavaScript
+   sichtbar; ohne JavaScript bleibt die Navigation ausgeklappt. */
+.nav-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+.nav-toggle:hover { background: var(--band); }
+
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.15s ease;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+    content: "";
+    position: absolute;
+}
+.nav-toggle-bars::before { transform: translateY(-6px); }
+.nav-toggle-bars::after { transform: translateY(6px); }
+
+/* Offener Zustand: die drei Striche werden zum Kreuz. */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { transform: rotate(-45deg); }
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -370,8 +411,36 @@ table.weiterbildung td:first-child {
 /* ---------- Mobil ---------- */
 
 @media (max-width: 700px) {
-    .site-head { justify-content: center; text-align: center; padding-bottom: 20px; }
-    .site-nav { justify-content: center; gap: 10px 20px; }
+    .site-head { justify-content: space-between; gap: 0 20px; padding: 18px var(--gutter) 14px; }
+
+    .js-nav .nav-toggle { display: inline-flex; position: relative; }
+
+    /* Die Navigation legt sich als eigene Zeile unter Name und Schaltflaeche. */
+    .site-nav {
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin-top: 8px;
+        border-top: 1px solid var(--line);
+    }
+
+    .site-nav a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .js-nav .site-nav { display: none; }
+
+    .js-nav .site-nav[data-open] {
+        display: flex;
+        animation: nav-aufklappen 0.2s ease;
+    }
+
+    @keyframes nav-aufklappen {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: none; }
+    }
 
     .pillars,
     .indications,
@@ -386,19 +455,13 @@ table.weiterbildung td:first-child {
     .meta-row { flex-direction: column; gap: 8px 0; }
     .band-facts { align-items: flex-start; text-align: left; }
 
-    .hero .btn-row { margin-bottom: 40px; }
-
-    .site-nav { gap: 0 20px; }
-
-    /* Der Hero wird gestrafft, damit beide Schaltflaechen auf einem
-       Telefon ohne Scrollen sichtbar bleiben. */
-    .site-head { gap: 6px 28px; padding: 16px var(--gutter) 12px; }
-    .hero { padding-top: 20px; }
+    /* Der Hero bleibt kompakt, damit beide Schaltflaechen auf einem
+       Telefon ohne Scrollen sichtbar sind. */
+    .hero { padding-top: 24px; }
     .hero .caps { margin-bottom: 12px; }
-    .hero .h1 { font-size: clamp(34px, 8.6vw, 44px); margin-bottom: 22px; }
-    .hero .lead { margin-bottom: 28px; }
-    .hero .btn-row { gap: 10px; }
-    .hero .btn { min-height: 54px; }
+    .hero .h1 { margin-bottom: 24px; }
+    .hero .lead { margin-bottom: 30px; }
+    .hero .btn-row { gap: 10px; margin-bottom: 40px; }
 }
 
 /* ---------- Touch-Bedienung ----------

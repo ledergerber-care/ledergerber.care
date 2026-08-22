@@ -13,13 +13,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
     <link href="css/site.css" rel="stylesheet">
+
+    <!-- Setzt die Klasse vor dem ersten Rendern, damit die eingeklappte
+         Navigation auf dem Telefon nicht kurz ausgeklappt aufblitzt. -->
+    <script>document.documentElement.classList.add('js-nav');</script>
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
 
     <header class="site-head">
         <a class="brand" href="#top">Eliane Ledergerber</a>
-        <nav class="site-nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptnavigation" aria-label="Menü öffnen">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="hauptnavigation" aria-label="Hauptnavigation">
             <a href="#cranio">Craniosacral</a>
             <a href="#physio">Physio</a>
             <a href="#domizil">Domizil</a>
