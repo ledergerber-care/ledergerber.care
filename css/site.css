@@ -270,14 +270,6 @@ section[id] { scroll-margin-top: 24px; }
 
 .band-head { max-width: 720px; margin: 0 auto clamp(36px, 4vw, 54px); text-align: center; }
 
-.band-facts {
-    justify-content: center;
-    margin-top: clamp(36px, 4vw, 54px);
-    padding-top: 34px;
-    border-top: 1px solid rgba(37, 50, 22, 0.14);
-    gap: 12px 44px;
-}
-
 /* Raster */
 .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3vw, 40px); }
 .pillar h3 { margin-bottom: 10px; }
@@ -453,7 +445,6 @@ table.weiterbildung td:first-child {
     .contact-cards { grid-template-columns: 1fr; gap: 30px; padding-top: 8px; }
 
     .meta-row { flex-direction: column; gap: 8px 0; }
-    .band-facts { align-items: flex-start; text-align: left; }
 
     /* Auf dem Telefon stehen die drei Textbloecke sehr eng beieinander
        und wirken schnell unruhig. Deshalb faellt hier weg, was der
