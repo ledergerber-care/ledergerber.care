@@ -455,12 +455,21 @@ table.weiterbildung td:first-child {
     .meta-row { flex-direction: column; gap: 8px 0; }
     .band-facts { align-items: flex-start; text-align: left; }
 
+    /* Auf dem Telefon stehen die drei Textbloecke sehr eng beieinander
+       und wirken schnell unruhig. Deshalb faellt hier weg, was der
+       naechste Block ohnehin sagt: der Ort in der Vorzeile und die
+       Strassenangabe im Lauftext (beides steht unter Kontakt). */
+    .ab-tablet { display: none; }
+
+    /* Engere Laufweite, damit die Vorzeile auf eine Zeile passt und
+       das "&" nicht am Zeilenende haengen bleibt. */
+    .hero .caps { font-size: 11px; letter-spacing: 0.16em; margin-bottom: 14px; }
+
     /* Der Hero bleibt kompakt, damit beide Schaltflaechen auf einem
        Telefon ohne Scrollen sichtbar sind. */
     .hero { padding-top: 24px; }
-    .hero .caps { margin-bottom: 12px; }
-    .hero .h1 { margin-bottom: 24px; }
-    .hero .lead { margin-bottom: 30px; }
+    .hero .h1 { margin-bottom: 22px; }
+    .hero .lead { margin-bottom: 28px; }
     .hero .btn-row { gap: 10px; margin-bottom: 40px; }
 }
 
