@@ -135,7 +135,7 @@ section[id] { scroll-margin-top: 24px; }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
-.arch { border-radius: 50% 50% 14px 14px / 34% 34% 3% 3%; }
+.arch { border-radius: 14px / 3%; }
 .media { width: 100%; object-fit: cover; display: block; }
 
 .meta-row {
@@ -276,8 +276,19 @@ section[id] { scroll-margin-top: 24px; }
 .pillar p { color: var(--body); margin: 0; }
 .pillar svg { margin-bottom: 14px; color: var(--accent); }
 
+.logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(32px, 5vw, 64px); }
+.logo-row img { height: 40px; width: auto; max-width: 150px; object-fit: contain; filter: grayscale(1); opacity: 0.55; transition: opacity 0.2s ease, filter 0.2s ease; }
+.logo-row a:hover img,
+.logo-row a:focus-visible img { filter: grayscale(0); opacity: 1; }
+
 .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 4vw, 56px); }
 .two-col-wide { gap: clamp(32px, 5vw, 64px); }
+
+/* Preistabellen: Zeilen (Titel, Text, Label, Tabelle, Hinweis) sollen
+   spaltenuebergreifend auf gleicher Hoehe liegen, auch wenn die
+   Beschreibungstexte unterschiedlich lang sind. */
+#preise .two-col-wide { grid-template-rows: repeat(5, auto); row-gap: 0; }
+#preise .two-col-wide > div { display: grid; grid-template-rows: subgrid; grid-row: span 5; }
 
 .split-media { display: grid; grid-template-columns: 1fr 1.35fr; gap: clamp(32px, 4.5vw, 64px); align-items: center; }
 .split-text { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(32px, 4.5vw, 64px); align-items: center; }
