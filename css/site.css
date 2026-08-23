@@ -37,7 +37,10 @@
     --space-band: clamp(56px, 7vw, 90px);
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 
 body {
     margin: 0;
@@ -233,7 +236,7 @@ section[id] { scroll-margin-top: 24px; }
 .hero {
     position: relative;
     /* Kein overflow:hidden mehr: der Glow darf nach oben in die
-       Kopfzeile hineinreichen. Horizontal haelt bereits body
+       Kopfzeile hineinreichen. Horizontal halten bereits html und body
        (overflow-x: hidden) die dekorativen Formen im Rahmen. */
     padding: clamp(30px, 5vw, 76px) 0 clamp(56px, 7vw, 104px);
 }
