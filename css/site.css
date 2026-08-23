@@ -413,6 +413,7 @@ table.weiterbildung td:first-child {
     .split-portrait .media { height: clamp(280px, 46vw, 420px); }
 
     .hero-leaf { display: none; }
+    #domizil .media { display: none; }
     .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .indications { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .netz { grid-template-columns: repeat(2, minmax(0, 1fr)); }
