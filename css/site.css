@@ -156,6 +156,8 @@ section[id] { scroll-margin-top: 24px; }
 /* ---------- Kopfzeile ---------- */
 
 .site-head {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -230,9 +232,9 @@ section[id] { scroll-margin-top: 24px; }
 
 .hero {
     position: relative;
-    /* haelt die dekorativen Formen im Rahmen, sonst waechst das Dokument
-       nach rechts und es entsteht ein horizontaler Scrollbalken */
-    overflow: hidden;
+    /* Kein overflow:hidden mehr: der Glow darf nach oben in die
+       Kopfzeile hineinreichen. Horizontal haelt bereits body
+       (overflow-x: hidden) die dekorativen Formen im Rahmen. */
     padding: clamp(30px, 5vw, 76px) 0 clamp(56px, 7vw, 104px);
 }
 
