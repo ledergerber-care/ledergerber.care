@@ -382,6 +382,13 @@ table.weiterbildung td:first-child {
 
 .contact-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; padding-top: 40px; }
 
+/* Auf grossen Bildschirmen teilen sich die drei Kontaktwege eine Reihe,
+   damit kein Button in eine zweite Zeile umbricht. */
+@media (min-width: 1001px) {
+    .contact .btn-row { flex-wrap: nowrap; gap: 10px; }
+    .contact .btn { flex: 1 1 0; padding: 0 16px; letter-spacing: 0.1em; }
+}
+
 .site-foot { padding-top: 36px; }
 .site-foot .caps { color: rgba(247, 245, 234, 0.4); margin-bottom: 16px; }
 
